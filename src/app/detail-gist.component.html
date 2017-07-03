@@ -1,0 +1,13 @@
+
+<div *ngIf= "exampleOfGist != undefined">
+  <!--<pre>{{exampleOfGist | json}}</pre>-->
+  <!--<div *ngFor="let to of exampleOfGist.files">-->
+    <!--<div>to.filename</div>-->
+    <!--<div>to.content</div>-->
+  <!--</div>-->
+  <!--<pre>{{exampleOfGist.files["main.cpp"].content}}</pre>-->
+  <div *ngFor="let to of exampleOfGist.files | keys">
+    <div>{{to}}</div>
+    <pre>{{exampleOfGist.files[to].content}}</pre>
+  </div>
+</div>
