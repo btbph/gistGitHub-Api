@@ -1,3 +1,6 @@
+нужно сделать(пэйджинг), разобраться со стилями, сделать авторизацию с GitHub(как-то)
+либо сделать окно для ввода логина
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.

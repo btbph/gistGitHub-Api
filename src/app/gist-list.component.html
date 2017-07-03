@@ -1,4 +1,7 @@
-<h3>Hello World!</h3>
-<li *ngFor="let gist of arrayOfGists">
-  <a [routerLink]="['/detail',gist.id]">{{gist.description}}</a>
-</li>
+<h3 class="listHeader">Список публичных гистов</h3>
+<ol>
+  <li class="listOfGists" *ngFor="let gist of arrayOfGists">
+    <a class="elementOfList" [routerLink]="['/detail',gist.id]">{{gist.description}} {{gist.created_at | date}}</a>
+  </li>
+</ol>
+

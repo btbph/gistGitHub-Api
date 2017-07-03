@@ -5,7 +5,7 @@ import {gitHubService} from './gitHub.service'
 @Component({
   selector: 'gist-list',
   templateUrl: './gist-list.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./gist-list.component.scss']
 })
 
 export class GistList implements OnInit{
