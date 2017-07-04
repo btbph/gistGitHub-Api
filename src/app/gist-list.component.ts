@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Gist} from './gist'
-import {gitHubService} from './gitHub.service'
+import {ActivatedRoute,Params} from '@angular/router';
+import {Location} from '@angular/common';
+
+import {Gist} from './gist';
+import {gitHubService} from './gitHub.service';
 
 @Component({
   selector: 'gist-list',
@@ -12,12 +15,17 @@ export class GistList implements OnInit{
 
   arrayOfGists:Gist[];
 
-  constructor(private GHService:gitHubService){}
+  constructor(private GHService:gitHubService,private route:ActivatedRoute, private location:Location){}
 
   ngOnInit():void{
-    this.GHService.getListofGists().then(res => this.arrayOfGists = res);
+    this.route.params
+      .switchMap((params: Params) => this.GHService.getListofGists(params['nickname']))
+      .subscribe(res => this.arrayOfGists = res);
   }
 
+  goBack():void{
+    this.location.back();
+  }
 
 
 }

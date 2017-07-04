@@ -12,9 +12,9 @@ export class gitHubService{
 
   constructor(private http:Http){}
 
-  getListofGists():Promise<Gist[]>
+  getListofGists(nickname:string):Promise<Gist[]>
   {
-    const url:string = 'https://api.github.com/users/btbph/gists';
+    const url:string = `https://api.github.com/users/${nickname}/gists`;
     return this.http.get(url).toPromise().then(responce => responce.json()).catch(this.handleError);
   }
 

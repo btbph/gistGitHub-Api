@@ -1,7 +1,8 @@
-<h3 class="listHeader">Список публичных гистов</h3>
+<div class="listHeader">Список публичных гистов</div>
 <ol>
   <li class="listOfGists" *ngFor="let gist of arrayOfGists">
     <a class="elementOfList" [routerLink]="['/detail',gist.id]">{{gist.description}} {{gist.created_at | date}}</a>
   </li>
 </ol>
+<div class="goBackButton" (click)="goBack()">Назад</div>
 
